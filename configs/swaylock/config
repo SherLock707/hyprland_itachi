@@ -30,9 +30,10 @@ line-clear-color=1f1d2e
 line-wrong-color=1f1d2e
 bs-hl-color=31748f
 grace=1
+fade-in=0.3
+
 grace-no-mouse
 grace-no-touch
-fade-in=0.2
 ignore-empty-password
 
 # AM/PM formats (American Format)

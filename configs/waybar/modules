@@ -439,7 +439,8 @@
     "on-click-middle": "close",
     "ignore-list": [
           "wofi",
-          "rofi",  
+          "rofi",
+          "foot",  
                    ]
   },
       

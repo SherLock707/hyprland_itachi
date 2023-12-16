@@ -16,7 +16,6 @@
 "margin-right": 8,
 
 "modules-left": [
-	"custom/keybinds",	
 	"custom/menu",
 	],
 
@@ -37,7 +36,7 @@
 	"custom/separator#dot-line",
 	"group/hardware",
 	"custom/separator#dot-line",
-	"custom/weather",
+	// "custom/weather",
 	"tray",
 	"custom/separator#dot-line",
 	"pulseaudio",

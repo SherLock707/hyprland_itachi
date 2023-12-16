@@ -62,5 +62,5 @@ fi
 
 main
 
-$HOME/.config/hypr/scripts/PywalSwww.sh &
+# $HOME/.config/hypr/scripts/PywalSwww.sh &
 $HOME/.config/hypr/scripts/Refresh.sh

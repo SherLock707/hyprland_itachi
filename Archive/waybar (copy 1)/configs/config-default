@@ -1,0 +1,67 @@
+// ### DEFAULT ### //
+
+{
+"include": "~/.config/waybar/modules",
+"layer": "top",
+//"mode": "dock",
+"exclusive": true,
+"passthrough": false,
+"position": "top",
+"spacing": 3,
+"fixed-center": true,
+"ipc": true,
+"margin-top": 6,
+"margin-left": 8,
+"margin-right": 8,
+
+"modules-left": [
+	"custom/menu",
+	"custom/separator#dot-line",
+	"wlr/taskbar",
+	],
+  
+"modules-center": [
+	"hyprland/workspaces",
+	], 
+
+"modules-right": [
+	"custom/pacman",
+	"custom/separator#dot-line",
+	"custom/network_traffic",
+	"custom/separator#dot-line",
+	"idle_inhibitor",
+	"custom/separator#dot-line",
+	"group/hardware",
+	"custom/separator#dot-line",
+	"custom/weather",
+	"custom/separator#dot-line",
+	"custom/cycle_wall",
+	"custom/separator#dot-line",
+	"tray", 
+	"custom/separator#dot-line",
+	"backlight",
+	"custom/separator#dot-line",
+	"pulseaudio",
+	"custom/separator#dot-line",
+	"clock",
+	// "custom/separator#dot-line",
+	// "custom/notification",
+	"custom/separator#dot-line",
+	"custom/lock",
+	"custom/separator#dot-line",
+	"custom/power"
+	],
+
+"group/hardware": {
+	"orientation": "horizontal",
+	"modules": [
+		"cpu", 
+		"temperature",
+		"custom/gpu-usage",
+		"custom/gpu-temp",
+		"custom/gpu-fan",
+		"memory",
+		"disk",
+	]
+	}
+}

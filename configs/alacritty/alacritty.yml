@@ -1,0 +1,174 @@
+## Garuda Linux configuration for Alacritty
+env:
+  TERM: xterm-256color
+
+window:
+  dimensions:
+    columns: 100
+    lines: 30
+  dynamic_padding: true
+  decorations: full
+  title: Alacritty
+  opacity: 0.6
+  class:
+    instance: Alacritty
+    general: Alacritty
+  decorations_theme_variant: Dark
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  size: 12
+  normal:
+    family: FiraCode Nerd Font Mono
+  bold:
+    family:  FiraCode Nerd Font Mono
+  italic:
+    family:  FiraCode Nerd Font Mono
+  bold_italic:
+    family:  FiraCode Nerd Font Mono
+    size: 12.0
+
+draw_bold_text_with_bright_colors: true
+
+save_to_clipboard: true
+
+window.dynamic_title: true
+
+cursor:
+  style: Underline
+
+live_config_reload: true
+
+shell:
+  program: /usr/bin/fish
+
+mouse:
+  hide_when_typing: true
+
+key_bindings:
+    # (Windows, Linux, and BSD only)
+  - { key: V,        mods: Control|Shift, action: Paste            }
+  - { key: C,        mods: Control|Shift, action: Copy             }
+  - { key: Insert,   mods: Shift,         action: PasteSelection   }
+  - { key: Key0,     mods: Control,       action: ResetFontSize    }
+  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+  - { key: Plus,     mods: Control,       action: IncreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+
+#schemes:
+#  mocha: &mocha
+#
+#    # Default colors
+#    primary:
+#      background: '#1E1E2E' # base
+#      foreground: '#CDD6F4' # text
+#      # Bright and dim foreground colors
+#      dim_foreground: '#CDD6F4' # text
+#      bright_foreground: '#CDD6F4' # text
+#
+#    # Cursor colors
+#    cursor:
+#      text: '#1E1E2E' # base
+#      cursor: '#F5E0DC' # rosewater
+#    vi_mode_cursor:
+#      text: '#1E1E2E' # base
+#      cursor: '#B4BEFE' # lavender
+#
+#    # Search colors
+#    search:
+#      matches:
+#        foreground: '#1E1E2E' # base
+#        background: '#A6ADC8' # subtext0
+#      focused_match:
+#        foreground: '#1E1E2E' # base
+#        background: '#A6E3A1' # green
+#      footer_bar:
+#        foreground: '#1E1E2E' # base
+#        background: '#A6ADC8' # subtext0
+#
+#    # Keyboard regex hints
+#    hints:
+#      start:
+#        foreground: '#1E1E2E' # base
+#        background: '#F9E2AF' # yellow
+#      end:
+#        foreground: '#1E1E2E' # base
+#        background: '#A6ADC8' # subtext0
+#
+#    # Selection colors
+#    selection:
+#      text: '#1E1E2E' # base
+#      background: '#F5E0DC' # rosewater
+#
+#    # Normal colors
+#    normal:
+#      black:   '#45475A' # surface1
+#      red:     '#F38BA8' # red
+#      green:   '#A6E3A1' # green
+#      yellow:  '#F9E2AF' # yellow
+#      blue:    '#89B4FA' # blue
+#      magenta: '#F5C2E7' # pink
+#      cyan:    '#94E2D5' # teal
+#      white:   '#BAC2DE' # subtext1
+#
+#    # Bright colors
+#    bright:
+#      black:   '#585B70' # surface2
+#      red:     '#F38BA8' # red
+#      green:   '#A6E3A1' # green
+#      yellow:  '#F9E2AF' # yellow
+#      blue:    '#89B4FA' # blue
+#      magenta: '#F5C2E7' # pink
+#      cyan:    '#94E2D5' # teal
+#      white:   '#A6ADC8' # subtext0
+#
+#    # Dim colors
+#    dim:
+#      black:   '#45475A' # surface1
+#      red:     '#F38BA8' # red
+#      green:   '#A6E3A1' # green
+#      yellow:  '#F9E2AF' # yellow
+#      blue:    '#89B4FA' # blue
+#      magenta: '#F5C2E7' # pink
+#      cyan:    '#94E2D5' # teal
+#      white:   '#BAC2DE' # subtext1
+#
+#    indexed_colors:
+#      - { index: 16, color: '#FAB387' }
+#      - { index: 17, color: '#F5E0DC' }
+#
+#colors: *mocha
+
+# Custom colorscheme fitting Sweetified theme
+colors:
+  # Default colors
+  primary:
+    background: '#000000'
+    foreground: '#f8f8f2'
+
+  # Normal colors
+  normal:
+    black: '#000000'
+    red: '#ff5555'
+    green: '#50fa7b'
+    yellow: '#f1fa8c'
+    blue: '#caa9fa'
+    magenta: '#ff79c6'
+    cyan: '#8be9fd'
+    white: '#bfbfbf'
+
+  # Bright colors
+  bright:
+    black: '#575b70'
+    red: '#ff6e67'
+    green: '#5af78e'
+    yellow: '#f4f99d'
+    blue: '#caa9fa'
+    magenta: '#ff92d0'
+    cyan: '#9aedfe'
+    white: '#e6e6e6'
+theme: Dracula

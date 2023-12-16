@@ -1,0 +1,65 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+
+// ### DEFAULT ### //
+{
+"include": "~/.config/waybar/modules",
+"layer": "top",
+//"mode": "dock",
+"exclusive": true,
+"passthrough": false,
+"position": "top",
+"spacing": 3,
+"fixed-center": true,
+"ipc": true,
+"margin-top": 6,
+"margin-left": 8,
+"margin-right": 8,
+
+"modules-left": [
+	"custom/keybinds",	
+	"custom/menu",
+	],
+
+"modules-center": [
+	"hyprland/workspaces#pacman",
+	"custom/separator#dot-line",
+	"wlr/taskbar"
+	], 
+
+"modules-right": [
+	"network#speed",
+	"custom/separator#dot-line",
+	"custom/pacman",
+	// "custom/separator#dot-line",
+	// "custom/clipboard",
+	"custom/separator#dot-line",
+	"idle_inhibitor",
+	"custom/separator#dot-line",
+	"group/hardware",
+	"custom/separator#dot-line",
+	"custom/weather",
+	"tray",
+	"custom/separator#dot-line",
+	"pulseaudio",
+	"custom/separator#dot-line",
+	"custom/backlight",
+	"custom/separator#dot-line",
+	"clock",
+	"custom/separator#dot-line",
+	"custom/lock",
+	"custom/power",
+	],
+
+	"group/hardware": {
+		"orientation": "horizontal",
+		"modules": [
+			"cpu", 
+			"temperature",
+			"memory",
+			"custom/gpu_usage",
+			"custom/gpu_temp",
+			"custom/gpu_fan",
+			"disk",
+		]
+		}
+}

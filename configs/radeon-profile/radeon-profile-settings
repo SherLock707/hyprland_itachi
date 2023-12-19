@@ -1,5 +1,5 @@
 [General]
-aleternateRowColors=true
+aleternateRowColors=false
 appendSysEnv=true
 closeToTray=true
 connConfirmMethod=1
@@ -31,4 +31,4 @@ showLegend=false
 startMinimized=true
 updateGraphs=true
 updateInterval=1
-windowGeometry=@Rect(860 360 1720 720)
+windowGeometry=@Rect(0 0 2002 934)

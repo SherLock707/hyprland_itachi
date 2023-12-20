@@ -440,7 +440,7 @@
     "ignore-list": [
           "wofi",
           "rofi",
-          "foot",  
+          "foot"  
                    ]
   },
       
@@ -697,6 +697,17 @@
     "tooltip": false,
     "on-click": "~/.config/hypr/scripts/ClipManager.sh",
     "on-click-right": "~/.config/hypr/scripts/ClipManager.sh",
+  },
+
+  "custom/notification": {
+    "exec": "dunstctl count history",
+    "format": "{icon} {}",
+    "format-icons": ["", ""],
+    "tooltip-format": "Log {dunstctl count}%",
+    "return-type": "",
+    "on-click": "dunstctl set-paused toggle",
+    "on-click-right": "dunstctl history-clear",
+    "interval": 5
   },
 
   "custom/backlight": {

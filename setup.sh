@@ -4,3 +4,5 @@ sudo pacman -S ddcutil
 
 
 chsh -s /bin/fish
+
+libinput debug-events --device /dev/input/event17

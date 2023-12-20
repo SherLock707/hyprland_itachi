@@ -28,6 +28,8 @@
 "modules-right": [
 	"network#speed",
 	"custom/separator#dot-line",
+	"custom/notification",
+	"custom/separator#dot-line",
 	"custom/pacman",
 	// "custom/separator#dot-line",
 	// "custom/clipboard",

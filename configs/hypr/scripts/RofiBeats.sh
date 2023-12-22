@@ -13,6 +13,7 @@ declare -A menu_options=(
   ["Chillhop ☕️🎶"]="http://stream.zeno.fm/fyn8eh3h5f8uv"
   ["SmoothChill ☕️🎶"]="https://media-ssl.musicradio.com/SmoothChill"
   ["Relaxing Music ☕️🎶"]="https://youtube.com/playlist?list=PLMIbmfP_9vb8BCxRoraJpoo4q1yMFg4CE"
+  ["Doja Cat - Agora Hills ☕️🎶"]="https://www.youtube.com/playlist?list=PLl2G65bbMeeXLM5xu9lavnk1jbsAIhnr6"
 )
 
 # Function for displaying notifications
@@ -42,4 +43,5 @@ main() {
 
 # Check if an online music process is running and send a notification, otherwise run the main function
 # main
-pkill -f http && dunstify -u low -i "$iDIR/music.png" "Online Music stopped" || main
+pkill -f http && dunstify -u low -i "$iDIR/music.png" "Online Music stopped"
+# main

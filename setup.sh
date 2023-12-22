@@ -6,3 +6,9 @@ sudo pacman -S ddcutil
 chsh -s /bin/fish
 
 libinput debug-events --device /dev/input/event17
+
+evtest
+
+hyprctl client
+
+fftest /dev/input/event5

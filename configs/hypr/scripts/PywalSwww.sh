@@ -25,7 +25,7 @@ done
 
 
 # execute pywal
-wal -i $wallpaper_path
+wal -is $wallpaper_path
 
 # execute pywal skipping tty and terminal
 #wal -i $wallpaper_path -s -t

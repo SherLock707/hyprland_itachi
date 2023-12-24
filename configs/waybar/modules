@@ -164,7 +164,7 @@
     "rotate": 0,
     // "format": "{icon} {percent}%",
     // "format-icons": ["󰃞", "󰃟", "󰃠"],
-    "format": "{icon}",
+    "format": "{icon} ",
     "format-icons": ["󰛩", "󱩎", "󱩏", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󰛨"],
     "tooltip-format": "backlight {percent}%",
     "icon-size": 10,
@@ -373,7 +373,7 @@
   },
       
   "pulseaudio": {
-    "format": "{icon}",
+    "format": "{icon} ",
     "format-bluetooth": "{icon} 󰂰 {volume}%",
     "format-muted": "󰖁",
     "format-icons": {
@@ -439,6 +439,7 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
+    "sort-by-app-id": true,
     "ignore-list": [
           "wofi",
           "rofi",
@@ -669,16 +670,28 @@
   //CUSTOM:
   "custom/pacman": { 
     "format": " {}",
-    "interval": 7200,                     // every two hours
-    "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",       // # of updates and tooltip details
-    "exec-if": "exit 0",                  // always run; consider advanced run conditions
+    "interval": 7200, // every two hours
+    "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" | column -t |tr '\n' '\r'", // # of updates and tooltip details
+    "exec-if": "exit 0", // always run; consider advanced run conditions
     "on-click": "foot -e sudo update --noconfirm", // update system
     "signal": 8
   },
 
+  "custom/pacman2": {
+    "format": "{icon} {}",
+    "return-type": "json",
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates",
+    "on-click": "foot -e sudo update --noconfirm", // update system
+    "format-icons": {
+        "has-updates": "󱍷",
+        "updated": "󰂪"
+    }
+},
+
   "custom/gpu_usage": {
     // "exec": "radeontop -d - -l 1 | awk -F'[% ]+' '/gpu/ {print $5}'",
-    "exec": "radeontop -d - -l 1 | awk -F'[% ]+' '/gpu/ {printf \"%.0f\n\", $5}'",
+    "exec": "radeontop -d - -l 1 | awk -F'[% ]+' '/gpu/ {printf \"%.0f\", $5}'",
     "format": "󰾲 {}%",
     "on-click": "foot -e radeontop -cT",
     "return-type": "",
@@ -702,6 +715,14 @@
   "interval": 5
   },
 
+  "custom/gpu_power": {
+    "exec": "sensors | awk '/PPT/{sub(\"\", $2); printf \"%.0f\", $2}'",
+    "format": "󱐋 {}W",
+    "on-click": "foot -e sensors",
+    "return-type": "",
+    "interval": 5
+    },
+
   "custom/clipboard": {
     "format": "󱃔 ",
     "tooltip": false,
@@ -710,7 +731,7 @@
   },
 
   "custom/notification": {
-    "exec": "count=$(dunstctl count history); paused=$(dunstctl is-paused); icon=$( [ \"$paused\" == \"false\" ] && echo -n \"\" || echo -n \"\" ); echo -n \"$count $icon\"",
+    "exec": "count=$(dunstctl count history); paused=$(dunstctl is-paused); icon=$( [ \"$paused\" == \"false\" ] && echo -n \"\" || echo -n \"\" ); echo -n \"$icon $count\"",
     "format": "{} ",
     // "format-icons": ["", ""],
     "tooltip-format": "Log {dunstctl count}%",
@@ -721,19 +742,20 @@
   },
 
   "custom/backlight": {
-    "interval": 2,
+    "interval": 60,
     "align": 0,
     "rotate": 0,
+    // "exec": "ddcutil getvcp 10 | awk '/current value/ {print $NF}'",
     // "format": "{icon} {percent}%",
     // "format-icons": ["󰃞", "󰃟", "󰃠"],
-    "format": "{icon}",
+    "format": "{icon} ",
     "format-icons": ["󰛩", "󱩎", "󱩏", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󰛨"],
-    "tooltip-format": "backlight {percent}%",
-    "icon-size": 10,
-    "on-click": "",
-    "on-click-middle": "",
-    "on-click-right": "",
-    "on-update": "",
+    "tooltip-format": "backlight {}%",
+    "icon-size": 20,
+    "on-click": "ddcutil setvcp 10 100 && notify-send -h string:x-dunst-stack-tag:brightness_notif -h int:value:100 -u low -i \"~/.config/dunst/icons/brightness-100.png\" \"Brightness : 100%\"",
+    "on-click-middle": "ddcutil setvcp 10 60 && notify-send -h string:x-dunst-stack-tag:brightness_notif -h int:value:60 -u low -i \"~/.config/dunst/icons/brightness-60.png\" \"Brightness : 60%\"",
+    "on-click-right": "ddcutil setvcp 10 20 && notify-send -h string:x-dunst-stack-tag:brightness_notif -h int:value:20 -u low -i \"~/.config/dunst/icons/brightness-20.png\" \"Brightness : 20%\"",
+    // "on-update": "",
     "on-scroll-up": "~/.config/hypr/scripts/Brightness.sh --inc",
     "on-scroll-down": "~/.config/hypr/scripts/Brightness.sh --dec",
     "smooth-scrolling-threshold": 1,
@@ -751,7 +773,7 @@
       "smooth-scrolling-threshold": 1,
     "player-icons": {
           "chromium": "",
-          "brave": "",
+          "brave": "󰒘",
           "default": "",
           "firefox": "",
           "kdeconnect": "",

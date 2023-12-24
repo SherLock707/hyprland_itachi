@@ -12,3 +12,5 @@ evtest
 hyprctl client
 
 fftest /dev/input/event5
+
+waybar-module-pacman-updates

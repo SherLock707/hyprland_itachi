@@ -11,7 +11,7 @@
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
-    "persistent_workspaces": {
+    "persistent-workspaces": {
       "1": [],
       "2": [],
       "3": [],
@@ -32,7 +32,7 @@
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
-    "persistent_workspaces":{
+    "persistent-workspaces":{
         "1": [],
         "2": [],
         "3": [],
@@ -62,7 +62,7 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "show-special": false,
-    "persistent_workspaces":{
+    "persistent-workspaces":{
         "1": [],
         "2": [],
         "3": [],
@@ -214,28 +214,51 @@
     "on-click": "blueman-manager",
   },
   
+  // "cava": {
+  //   // "cava_config": "$HOME/.config/cava/cava.conf",
+  //   "framerate": 30,
+  //   "autosens": 1,
+  //   "sensitivity": 100,
+  //   "bars": 14,
+  //   "lower_cutoff_freq": 50,
+  //   "higher_cutoff_freq": 10000,
+  //   "method": "pulse",
+  //   "source": "auto",
+  //   "stereo": true,
+  //   "reverse": false,
+  //   "bar_delimiter": 0,
+  //   // "monstercat": false,
+  //   // "waves": false,
+  //   "noise_reduction": 0.77,
+  //   "input_delay": 2,
+  //   "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+  //   "actions": {
+  //       "on-click-right": "mode"
+  //              }
+  // },
+
   "cava": {
-    // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
-    "framerate": 30,
-    "autosens": 1,
-    "sensitivity": 100,
-    "bars": 14,
-    "lower_cutoff_freq": 50,
-    "higher_cutoff_freq": 10000,
-    "method": "pulse",
-    "source": "auto",
-    "stereo": true,
-    "reverse": false,
-    "bar_delimiter": 0,
-    "monstercat": false,
-    "waves": false,
-    "noise_reduction": 0.77,
-    "input_delay": 2,
-    "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-    "actions": {
-        "on-click-right": "mode"
-               }
-  },
+      //"cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+      "framerate": 30,
+      "autosens": 1,
+      "sensitivity": 100,
+      "bars": 14,
+      "lower_cutoff_freq": 50,
+      "higher_cutoff_freq": 10000,
+      "method": "pulse",
+      "source": "auto",
+      "stereo": true,
+      "reverse": false,
+      "bar_delimiter": 0,
+      "monstercat": false,
+      "waves": false,
+      "noise_reduction": 0.77,
+      "input_delay": 2,
+      "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+      "actions": {
+          "on-click-right": "mode"
+          }
+    },
    
   "clock": {
     "interval": 1,
@@ -749,8 +772,10 @@
     // "format": "{icon} {percent}%",
     // "format-icons": ["󰃞", "󰃟", "󰃠"],
     "format": "{icon} ",
-    "format-icons": ["󰛩", "󱩎", "󱩏", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󰛨"],
+    // "format-icons": ["󰛩", "󱩎", "󱩏", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󰛨"],
+    "format-icons": ["󰃠"],
     "tooltip-format": "backlight {}%",
+    "tooltip": true,
     "icon-size": 20,
     "on-click": "ddcutil setvcp 10 100 && notify-send -h string:x-dunst-stack-tag:brightness_notif -h int:value:100 -u low -i \"~/.config/dunst/icons/brightness-100.png\" \"Brightness : 100%\"",
     "on-click-middle": "ddcutil setvcp 10 60 && notify-send -h string:x-dunst-stack-tag:brightness_notif -h int:value:60 -u low -i \"~/.config/dunst/icons/brightness-60.png\" \"Brightness : 60%\"",
@@ -778,7 +803,7 @@
           "firefox": "",
           "kdeconnect": "",
           "mopidy": "",
-          "mpv": "󰐹",
+          "mpv": "",
           "spotify": "",
           "vlc": "󰕼",
     },
@@ -789,6 +814,12 @@
     },
     // "ignored-players": ["firefox"]
     "max-length": 30,
+  },
+
+  "custom/mviz": {
+    "exec": "~/.config/hypr/scripts/waybar_cava.sh",
+    "format": "{}",
+    // "interval": 5
   },
 
   }

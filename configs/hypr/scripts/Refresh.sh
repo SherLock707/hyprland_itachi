@@ -11,7 +11,8 @@ for _prs in "${_ps[@]}"; do
 done
 
 # relaunch apps
-dunst &
+# dunst &
+swaync-client -R -rs &
 waybar &
 
 #sleep 1

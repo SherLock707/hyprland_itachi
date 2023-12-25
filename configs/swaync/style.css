@@ -1,7 +1,14 @@
+@define-color foreground rgb(248, 248, 242);
+@define-color background rgb(40, 42, 54);
+@define-color background-alpha rgba(40, 42, 54, 0.8);
+@define-color accent rgba(189, 147, 249, 0.8);
+@define-color current-line rgb(68, 71, 90);
+@define-color comment rgb(98, 114, 164);
+
 * {
   all: unset;
   font-size: 14px;
-  font-family: "Ubuntu Nerd Font";
+  font-family: "JetBrainsMono Nerd Font";
   transition: 200ms;
 }
 
@@ -12,11 +19,13 @@
   background-color: #1e1e2e;
   color: #cdd6f4;
   padding: 0;
+  border: 1px solid @accent;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification {
   padding: 7px;
   border-radius: 12.6px;
+  border: 1px solid @accent;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification.critical {
@@ -88,6 +97,7 @@
   background-color: #1e1e2e;
   color: #cdd6f4;
   padding: 14px;
+  border: 1px solid @accent;
 }
 
 .control-center .widget-title {

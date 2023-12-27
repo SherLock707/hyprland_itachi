@@ -30,7 +30,8 @@
 "modules-right": [
 	"network#speed",
 	"custom/separator#blank_1",
-	"custom/notification",
+	// "custom/notification",
+	"custom/swaync",
 	"custom/pacman2",
 	"idle_inhibitor",
 	"custom/separator#blank_1",

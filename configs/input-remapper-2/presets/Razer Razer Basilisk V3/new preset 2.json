@@ -2,30 +2,6 @@
     {
         "input_combination": [
             {
-                "type": 1,
-                "code": 276,
-                "origin_hash": "6a76ddc1f522e52d75d6504f361b0c79"
-            }
-        ],
-        "target_uinput": "keyboard",
-        "output_symbol": "KEY_LEFTMETA + KEY_TAB",
-        "mapping_type": "key_macro"
-    },
-    {
-        "input_combination": [
-            {
-                "type": 1,
-                "code": 275,
-                "origin_hash": "6a76ddc1f522e52d75d6504f361b0c79"
-            }
-        ],
-        "target_uinput": "keyboard",
-        "output_symbol": "KEY_LEFTMETA + KEY_LEFTSHIFT + KEY_TAB",
-        "mapping_type": "key_macro"
-    },
-    {
-        "input_combination": [
-            {
                 "type": 2,
                 "code": 6,
                 "origin_hash": "6a76ddc1f522e52d75d6504f361b0c79",

@@ -38,6 +38,7 @@ ForegroundPositive=113,247,159
 ForegroundVisited=82,148,226
 
 [Colors:Selection]
+ChangeSelectionColor=false
 BackgroundAlternate=29,153,243
 BackgroundNormal=95, 66, 130
 DecorationFocus=95, 66, 130
@@ -95,10 +96,9 @@ ForegroundVisited=179,13,191
 
 [DirSelect Dialog]
 DirSelectDialog Size=1333,774
-History Items[$e]=file:///run/media/itachi/DATA_SATA_4TB/Downloads
 
 [General]
-BrowserApplication=thorium-browser.desktop
+BrowserApplication=Brave-browser.desktop
 ColorScheme=Sweetified
 ColorSchemeHash=080f3f8eac020ac566c252909d74ead45adfd52c
 fixed=FiraCode Nerd Font Mono,10,-1,5,50,0,0,0,0,0
@@ -112,6 +112,7 @@ Theme=BeautyLine
 
 [KDE]
 LookAndFeelPackage=Dr460nized
+ShowDeleteCommand=false
 SingleClick=false
 
 [KFileDialog Settings]
@@ -133,6 +134,9 @@ Sort hidden files last=false
 Sort reversed=false
 Speedbar Width=137
 View Style=DetailTree
+
+[PreviewSettings]
+MaximumRemoteSize=0
 
 [WM]
 activeBackground=12,14,20

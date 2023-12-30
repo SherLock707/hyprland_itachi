@@ -78,3 +78,11 @@
     "exec": "play ~/Downloads/short_chime.ogg",
     "app-name": ".*"
   }
+
+
+  "scripts": {
+    "sound-script": {
+      "exec": "play -v 0.5 ~/.config/swaync/tone/noti.ogg",
+      "app-name": "^(?!.*\\b(volume|brightness)\\b).*"
+    }
+  },

@@ -30,10 +30,10 @@ get_icon() {
 notify_user() {
     if [[ "$(get_volume)" == "Muted" ]]; then
         # dunstify -h string:x-dunst-stack-tag:volume_notif -u low -i "$(get_icon)" "Volume: Muted"
-        notify-send -e -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume: Muted"
+        notify-send -e  -a volume  -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume: Muted"
     else
         # dunstify -h int:value:"$(get_volume | sed 's/%//')" -h string:x-dunst-stack-tag:volume_notif -u low -i "$(get_icon)" "Volume: $(get_volume)"
-        notify-send -e -h int:value:"$(get_volume | sed 's/%//')" -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume: $(get_volume)"
+        notify-send -e  -a volume  -h int:value:"$(get_volume | sed 's/%//')" -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume: $(get_volume)"
     fi
 }
 
@@ -56,9 +56,9 @@ dec_volume() {
 # Toggle Mute
 toggle_mute() {
 	if [ "$(pamixer --get-mute)" == "false" ]; then
-		pamixer -m && notify-send -e -h string:x-canonical-private-synchronous:volume_notif -u low -i "$iDIR/volume-mute.png" "Volume Switched OFF"
+		pamixer -m && notify-send -e -a volume -h string:x-canonical-private-synchronous:volume_notif -u low -i "$iDIR/volume-mute.png" "Volume Switched OFF"
 	elif [ "$(pamixer --get-mute)" == "true" ]; then
-		pamixer -u && notify-send  -e -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume Switched ON"
+		pamixer -u && notify-send  -e -a volume -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume Switched ON"
 	fi
 }
 

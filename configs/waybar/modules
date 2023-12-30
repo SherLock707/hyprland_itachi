@@ -439,6 +439,9 @@
     "on-click": "activate",
     "on-click-middle": "close",
     "sort-by-app-id": true,
+    "app_ids-mapping": {
+      "Free Download Manager": "fdm"
+    },
     "ignore-list": [
           "wofi",
           "rofi",
@@ -713,7 +716,6 @@
   "custom/mviz": {
     "exec": "~/.config/hypr/scripts/waybar_cava.sh",
     "format": "{}",
-    // "interval": 5
   },
 
   }

@@ -244,7 +244,8 @@ progressbar {
 
 .notification.low progress,
 .notification.normal progress {
-  background-color: #89b4fa;
+  /* background-color: #89b4fa; */
+  background-color: @color11;
 }
 
 trough {

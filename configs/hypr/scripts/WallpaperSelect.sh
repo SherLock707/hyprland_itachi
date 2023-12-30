@@ -3,9 +3,9 @@
 DIR=$HOME/Pictures/wallpapers
 
 # Transition config
-FPS=30
-TYPE="simple"
-DURATION=3
+FPS=60
+TYPE="wipe"
+DURATION=1
 SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
 
 # Check if swaybg is running
@@ -20,6 +20,7 @@ RANDOM_PIC_NAME="${#PICS[@]}. random"
 
 # Rofi command
 rofi_command="rofi -dmenu -config ~/.config/rofi/config-wallpaper.rasi"
+# rofi_command="rofi -dmenu -config ~/.config/rofi/config-wallpaper_img.rasi"
 
 menu() {
   for i in "${!PICS[@]}"; do

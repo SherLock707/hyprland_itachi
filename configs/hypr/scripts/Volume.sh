@@ -42,7 +42,7 @@ inc_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         pamixer -u && notify_user
     fi
-    pamixer -i 5 && notify_user
+    pamixer -i 1 && notify_user
 }
 
 # Decrease Volume
@@ -50,7 +50,7 @@ dec_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         pamixer -u && notify_user
     fi
-    pamixer -d 5 && notify_user
+    pamixer -d 1 && notify_user
 }
 
 # Toggle Mute

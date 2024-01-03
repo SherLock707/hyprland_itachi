@@ -1,18 +1,20 @@
 @import '../../.cache/wal/colors-waybar.css';
 
-@define-color foreground rgb(248, 248, 242);
-@define-color background @color1;
+/* @define-color foreground rgb(248, 248, 242);
+@define-color background @color1; */
 /* @define-color background rgb(40, 42, 54); */
-@define-color background-alpha rgba(40, 42, 54, 0.8);
-@define-color accent @color2;
+/* @define-color background-alpha rgba(40, 42, 54, 0.8); */
+@define-color accent @color1;
+@define-color accent2 @color13;
 /* @define-color accent rgba(189, 147, 249, 0.8); */
-@define-color current-line rgb(68, 71, 90);
-@define-color comment rgb(98, 114, 164);
+/* @define-color current-line rgb(68, 71, 90); */
+/* @define-color comment rgb(98, 114, 164); */
 
 * {
   all: unset;
   font-size: 18px;
   /* font-family: "JetBrainsMono Nerd Font"; */
+  /* font-family: "Source Code Pro"; */
   transition: 200ms;
 }
 
@@ -68,8 +70,10 @@
   border-radius: 5px;
   background: linear-gradient(
     45deg,
-    rgba(164, 89, 235, 0.8),
-    @accent
+    /* rgba(164, 89, 235, 0.8), */
+    @accent,
+    @accent2
+    
   );
   border: 1px;
   margin: 5px;
@@ -245,7 +249,15 @@ progressbar {
 .notification.low progress,
 .notification.normal progress {
   /* background-color: #89b4fa; */
-  background-color: @color11;
+  /* background-color: @color11; */
+  background: linear-gradient(
+    45deg,
+    /* rgba(164, 89, 235, 0.8), */
+    
+    @accent2,
+    @accent
+    
+  );
 }
 
 trough {

@@ -438,7 +438,6 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "sort-by-app-id": true,
     "app_ids-mapping": {
       "Free Download Manager": "fdm"
     },
@@ -480,6 +479,7 @@
     
   "custom/menu": {
     "format": "󰣇 ",
+    // "format": " ",
     "tooltip": false,
     "on-click": "rofi -show drun -modi run,drun,filebrowser",
     // "on-click": "pkill rofi || rofi -show drun -modi run,drun,filebrowser",

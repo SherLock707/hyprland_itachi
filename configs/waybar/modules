@@ -69,12 +69,12 @@
         "4": [],
         "5": [],
     },
-    "format": "{icon}",
     "format-icons": {
       "active": " 󰮯 ",
       "default": "󰊠",
       "persistent":"󰊠",
       "empty":"󱙝",
+      "special":"",
     },
   },
   

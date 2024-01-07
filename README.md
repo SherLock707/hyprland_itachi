@@ -4,10 +4,9 @@
   Everywhere!
 - **Shell** • [Fish](https://github.com/fish-shell/fish-shell) 🐠
   [starship](https://github.com/starship/starship) Cross Shell Platform!
-- **Terminal** • [WezTerm](https://github.com/wez/wezterm) 💻 A powerful term
-  with gpu support!
+- **Terminal** • [Foot]([https://github.com/wez/wezterm](https://codeberg.org/dnkl/foot) 💻 The fast, lightweight and minimalistic Wayland terminal emulator.
 - **Panel** • [Waybar](https://aur.archlinux.org/packages/waybar-hyprland-git)🍧
-  Patched waybar following hyprland faq!
+  Highly customizable Wayland bar for Sway and Wlroots based compositors.
 - **Notify Daemon** • [Swaync](https://github.com/ErikReider/SwayNotificationCenter) 🍃
   Minimalist and functional!
 - **Launcher** • [Rofi](https://github.com/davatorium/rofi) 🚀 Realmente rápido

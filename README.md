@@ -4,7 +4,7 @@
   Everywhere!
 - **Shell** • [Fish](https://github.com/fish-shell/fish-shell) 🐠
   [starship](https://github.com/starship/starship) Cross Shell Platform!
-- **Terminal** • [Foot]([https://github.com/wez/wezterm](https://codeberg.org/dnkl/foot) 💻 The fast, lightweight and minimalistic Wayland terminal emulator.
+- **Terminal** • [Foot](https://codeberg.org/dnkl/foot) 💻 The fast, lightweight and minimalistic Wayland terminal emulator.
 - **Panel** • [Waybar](https://aur.archlinux.org/packages/waybar-hyprland-git)🍧
   Highly customizable Wayland bar for Sway and Wlroots based compositors.
 - **Notify Daemon** • [Swaync](https://github.com/ErikReider/SwayNotificationCenter) 🍃

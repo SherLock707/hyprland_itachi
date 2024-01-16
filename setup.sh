@@ -26,7 +26,7 @@
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 # Define the path to the dotfiles repository
-dotfiles_repo_path="/home/itachi/Git_repos/hyprland_itachi/config"
+dotfiles_repo_path="~/.dotfiles/config"
 
 # Function to create symlinks and handle existing folders
 create_symlinks() {

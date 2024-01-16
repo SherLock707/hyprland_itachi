@@ -32,7 +32,7 @@ notify_user() {
 # Change brightness
 change_backlight() {
 	# brightnessctl set "$1" && get_icon && notify_user
-	ddcutil --sleep-multiplier 0 setvcp 10 $1 && get_icon && notify_user
+	ddcutil --sleep-multiplier 0.1 setvcp 10 $1 && get_icon && notify_user
 }
 
 # Execute accordingly

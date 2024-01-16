@@ -1,5 +1,8 @@
 MenuBar=Disabled
 
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detailsmodesettings.upd:move-content-display
+
 [DetailsMode]
 PreviewSize=16
 
@@ -10,6 +13,9 @@ ViewPropsTimestamp=2023,12,28,21,28,40.404
 [KFileDialog Settings]
 Places Icons Auto-resize=false
 Places Icons Static Size=22
+
+[KPropertiesDialog]
+3440x1440 screen: Window-Maximized=true
 
 [MainWindow]
 MenuBar=Disabled

@@ -253,9 +253,11 @@ progressbar {
   background: linear-gradient(
     45deg,
     /* rgba(164, 89, 235, 0.8), */
+    rgba(25, 227, 250, 0.8),
+    rgba(250, 154, 250, 0.8)
     
-    @accent2,
-    @accent
+    /* @accent2,
+    @accent */
     
   );
 }

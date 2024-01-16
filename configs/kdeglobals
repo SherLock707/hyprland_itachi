@@ -38,9 +38,9 @@ ForegroundPositive=113,247,159
 ForegroundVisited=82,148,226
 
 [Colors:Selection]
-ChangeSelectionColor=false
 BackgroundAlternate=29,153,243
 BackgroundNormal=95, 66, 130
+ChangeSelectionColor=false
 DecorationFocus=95, 66, 130
 DecorationHover=95, 66, 130
 ForegroundActive=252,252,252
@@ -106,6 +106,7 @@ font=Fira Sans,10,-1,5,50,0,0,0,0,0
 menuFont=Fira Sans,10,-1,5,50,0,0,0,0,0
 smallestReadableFont=Fira Sans,10,-1,5,50,0,0,0,0,0
 toolBarFont=Fira Sans,10,-1,5,50,0,0,0,0,0
+TerminalApplication=foot
 
 [Icons]
 Theme=BeautyLine

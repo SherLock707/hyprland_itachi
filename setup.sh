@@ -1,27 +1,5 @@
 #!/bin/bash
 
-# sudo pacman -S ddcutil
-
-# #ddcutil setvcp 10 + 10
-
-
-# chsh -s /bin/fish
-
-# libinput debug-events --device /dev/input/event17
-
-# evtest
-
-# hyprctl client
-
-# fftest /dev/input/event5
-
-# waybar-module-pacman-updates
-
-# glibc-locales
-
-# bat 
-
-
 # Change directory to the location of the script
 cd "$(dirname "${BASH_SOURCE[0]}")"
 

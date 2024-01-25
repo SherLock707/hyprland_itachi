@@ -43,6 +43,7 @@ main() {
 
 # Check if an online music process is running and send a notification, otherwise run the main function
 # main
-pkill -f "mpv --shuffle --vid=no" && dunstify -u low -i "$iDIR/music.png" "Online Music stopped" || main
+# pkill -f "mpv --shuffle --vid=no" && dunstify -u low -i "$iDIR/music.png" "Online Music stopped" || main
+pkill mpv && notify-send -u low -i "$iDIR/music.png" "Online Music stopped" || main
 # pkill -f http && dunstify -u low -i "$iDIR/music.png" "Online Music stopped" || main
 # main

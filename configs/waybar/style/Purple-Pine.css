@@ -12,6 +12,7 @@
 @define-color wb-hvr-fg #f6c177;
 
 * {
+	/* font-family: "JetBrainsMono Nerd Font"; */
 	font-family: "JetBrainsMono Nerd Font";
 	font-weight: bold;
 	min-height: 0;

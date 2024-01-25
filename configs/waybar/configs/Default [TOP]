@@ -18,8 +18,8 @@
 	"custom/menu",
 	"custom/separator#blank_1",
 	// "cava",
-	"mpris"
-	// "custom/mviz"
+	"mpris",
+	"custom/mviz"
 	],
 
 "modules-center": [
@@ -34,6 +34,7 @@
 	// "custom/notification",
 	"custom/swaync",
 	"custom/pacman2",
+	// "custom/pacman",
 	"idle_inhibitor",
 	"custom/separator#blank_1",
 	"group/hardware",

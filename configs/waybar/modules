@@ -695,7 +695,7 @@
       "smooth-scrolling-threshold": 1,
     "player-icons": {
           "chromium": "",
-          "brave": "󰒘",
+          "brave": "",
           "default": "",
           "firefox": "",
           "kdeconnect": "",

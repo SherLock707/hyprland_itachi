@@ -1,6 +1,9 @@
 #!/bin/bash
 
 iDIR="$HOME/.config/dunst/icons"
+sDIR="$HOME/.config/hypr/sounds/freedesktop/"
+UP_FILE="/tmp/vol_change_up"
+DOWN_FILE="/tmp/vol_change_up"
 
 # Get Volume
 get_volume() {
@@ -28,29 +31,51 @@ get_icon() {
 
 # Notify
 notify_user() {
+    
     if [[ "$(get_volume)" == "Muted" ]]; then
         # dunstify -h string:x-dunst-stack-tag:volume_notif -u low -i "$(get_icon)" "Volume: Muted"
         notify-send -e  -a volume  -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume: Muted"
     else
         # dunstify -h int:value:"$(get_volume | sed 's/%//')" -h string:x-dunst-stack-tag:volume_notif -u low -i "$(get_icon)" "Volume: $(get_volume)"
+        play -q "$sDIR/audio-volume-change.oga" &
         notify-send -e  -a volume  -h int:value:"$(get_volume | sed 's/%//')" -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume: $(get_volume)"
     fi
 }
 
 # Increase Volume
 inc_volume() {
+
+    if [ -e "$UP_FILE" ]; then
+        rm -f "$UP_FILE" &
+        # notify-send "Removing PID file. $(get_volume)."
+        exit
+    fi
+
     if [ "$(pamixer --get-mute)" == "true" ]; then
         pamixer -u && notify_user
     fi
-    pamixer -i 1 && notify_user
+    pamixer -i 2 && notify_user
+
+    touch "$UP_FILE" &
+    # notify-send "Creating PID file. $(get_volume)"
 }
 
 # Decrease Volume
 dec_volume() {
+
+    if [ -e "$DOWN_FILE" ]; then
+        rm -f "$DOWN_FILE" &
+        # notify-send "Removing PID file. $(get_volume)."
+        exit
+    fi
+
     if [ "$(pamixer --get-mute)" == "true" ]; then
         pamixer -u && notify_user
     fi
-    pamixer -d 1 && notify_user
+    pamixer -d 2 && notify_user
+
+    touch "$DOWN_FILE" &
+    # notify-send "Creating PID file. $(get_volume)"
 }
 
 # Toggle Mute

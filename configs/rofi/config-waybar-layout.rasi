@@ -113,7 +113,7 @@ listview {
   	spacing:                    4px;
   	dynamic:                    true;
   	cycle:                      true;
-  	scrollbar:                  true;
+  	scrollbar:                  false;
   	layout:                     vertical;
   	reverse:                    false;
   	fixed-height:               true;

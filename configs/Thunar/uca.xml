@@ -12,16 +12,27 @@
 	<audio-files/>
 </action>
 <action>
-	<icon>utilities-terminal</icon>
+	<icon>foot</icon>
 	<name>Open Terminal Here</name>
 	<submenu></submenu>
 	<unique-id>1488955845049151-1</unique-id>
-	<command>for f in %F; do exo-open --working-directory &quot;$f&quot; --launch TerminalEmulator; done</command>
+	<command>foot -D %f</command>
 	<description></description>
 	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
+</action>
+<action>
+	<icon>7-zip</icon>
+	<name>Extract with 7z</name>
+	<submenu></submenu>
+	<unique-id>1704441839598553-1</unique-id>
+	<command>7z x -y %F </command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.rar;*.zip;*.7z;*.gz;*.tar,;*.xz</patterns>
+	<other-files/>
 </action>
 <action>
 	<icon>checkbox</icon>

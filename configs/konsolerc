@@ -1,0 +1,17 @@
+[Desktop Entry]
+DefaultProfile=cat.profile
+
+[General]
+ConfigVersion=1
+
+[MainWindow]
+3440x1440 screen: Window-Maximized=true
+MenuBar=Enabled
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAAAAAAAAPwCAAAAAvsAAAAiAFEAdQBpAGMAawBDAG8AbQBtAGEAbgBkAHMARABvAGMAawAAAAAA/////wAAARsA////+wAAABwAUwBTAEgATQBhAG4AYQBnAGUAcgBEAG8AYwBrAAAAAAD/////AAAA0AD///8AAASkAAABpAAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAACAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAAAAABwAcwBlAHMAcwBpAG8AbgBUAG8AbwBsAGIAYQByAAAAAAD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+
+[MainWindow][Toolbar sessionToolbar]
+IconSize=16
+
+[UiSettings]
+ColorScheme=

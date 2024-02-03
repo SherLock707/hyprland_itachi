@@ -8,9 +8,15 @@ Mode=THUNAR_SBR_DATE_MODE_NOW
 Format=%Y%m%d
 OffsetMode=THUNAR_SBR_OFFSET_MODE_LEFT
 
+[ThunarSbrNumberRenamer]
+TextMode=THUNAR_SBR_TEXT_MODE_TN
+Text=S0E
+Mode=THUNAR_SBR_NUMBER_MODE_010203
+Start=1
+
 [ThunarSbrReplaceRenamer]
 CaseSensitive=FALSE
-Replacement=
-Pattern=:
+Replacement=-
+Pattern=\ ｜\ 
 Regexp=FALSE
 

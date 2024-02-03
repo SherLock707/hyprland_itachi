@@ -54,3 +54,6 @@ Use --utf-force argument to force start if you're sure your terminal can handle 
 2023/12/30 (22:13:07) | ===> btop++ v.1.2.13
 2023/12/30 (22:13:07) | ERROR: No UTF-8 locale detected!
 Use --utf-force argument to force start if you're sure your terminal can handle it.
+
+2024/01/14 (09:44:12) | ===> btop++ v.1.3.0
+2024/01/14 (09:44:12) | WARNING: ROCm SMI: Failed to get maximum GPU temperature, defaulting to 110°C

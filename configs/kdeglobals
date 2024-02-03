@@ -101,12 +101,12 @@ DirSelectDialog Size=1333,774
 BrowserApplication=Brave-browser.desktop
 ColorScheme=Sweetified
 ColorSchemeHash=080f3f8eac020ac566c252909d74ead45adfd52c
-fixed=FiraCode Nerd Font Mono,10,-1,5,50,0,0,0,0,0
+TerminalApplication=foot
+fixed=JetBrainsMonoNL Nerd Font,10,-1,5,50,0,0,0,0,0
 font=Fira Sans,10,-1,5,50,0,0,0,0,0
 menuFont=Fira Sans,10,-1,5,50,0,0,0,0,0
 smallestReadableFont=Fira Sans,10,-1,5,50,0,0,0,0,0
 toolBarFont=Fira Sans,10,-1,5,50,0,0,0,0,0
-TerminalApplication=foot
 
 [Icons]
 Theme=BeautyLine

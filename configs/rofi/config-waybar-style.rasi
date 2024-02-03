@@ -108,12 +108,12 @@ entry {
 /* ---- Listview ---- */
 listview {
     enabled:                    true;
-    columns:                    2;
-    lines:                      8;
+    columns:                    3;
+    lines:                      7;
   	spacing:                    4px;
   	dynamic:                    true;
   	cycle:                      true;
-  	scrollbar:                  true;
+  	scrollbar:                  false;
   	layout:                     vertical;
   	reverse:                    false;
   	fixed-height:               true;

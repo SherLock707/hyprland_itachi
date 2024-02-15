@@ -1,18 +1,19 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Rose Pine */
 
-@import '../../.cache/wal/colors-waybar.css';
 
 @define-color bar-bg rgba(0, 0, 0, 0);
 @define-color main-bg #26233a;
 /* @define-color main-fg #ebbcba; */
-@define-color main-fg @color7; /* 6 7 13 3 11*/
+@define-color main-fg #cba6f7;
 @define-color wb-act-bg #31748f;
 @define-color wb-act-fg #9ccfd8;
 @define-color wb-hvr-bg #eb6f92;
 @define-color wb-hvr-fg #f6c177;
+@define-color inactive #313538;
 
 * {
+	/* font-family: "JetBrainsMono Nerd Font"; */
 	font-family: "JetBrainsMono Nerd Font";
 	font-weight: bold;
 	min-height: 0;
@@ -34,22 +35,23 @@ tooltip {
 }
 
 #workspaces button {
+    background: @inactive;
     box-shadow: none;
 	text-shadow: none;
     padding: 0px;
     border-radius: 9px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    padding-left: 3px;
-    padding-right: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
     color: @main-fg;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces button.active {
-    background: @wb-act-bg;
-    color: @wb-act-fg;
+    background: @main-fg;
+    color: @main-fg;
     margin-left: 3px;
     padding-left: 12px;
     padding-right: 12px;

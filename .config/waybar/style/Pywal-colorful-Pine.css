@@ -27,6 +27,22 @@
 @define-color flamingo  #f2cdcd;
 @define-color rosewater #f5e0dc;
 
+
+/* @define-color rosewater		#f5e0dc;
+@define-color flamingo		#f2cdcd;
+@define-color pink			#f5c2e7;
+@define-color mauve			#cba6f7;
+@define-color red			#f38ba8;
+@define-color maroon		#eba0ac;
+@define-color peach			#fab387;
+@define-color yellow		#f9e2af;
+@define-color green			#a6e3a1;
+@define-color teal			#94e2d5;
+@define-color sky			#89dceb;
+@define-color sapphire		#74c7ec;
+@define-color blue			#89b4fa;
+@define-color lavender		#b4befe; */
+
 * {
 	font-family: "JetBrainsMono Nerd Font";
 	font-weight: bold;
@@ -116,12 +132,13 @@ tooltip {
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
+#
+
 #backlight,
 #backlight-slider,
 #battery,
 #bluetooth,
 #cava,
-#custom-mviz,
 #clock,
 #cpu,
 #disk,
@@ -182,6 +199,10 @@ tooltip {
     padding-right: 6px;
 }
 
+#custom-mviz
+{
+    color: @maroon;
+}
 
 #cpu,
 #disk,
@@ -192,7 +213,7 @@ tooltip {
 #custom-gpu_fan,
 #custom-gpu_power
 {
-    color: @flamingo;
+    color: @green;
 }
 
 #clock
@@ -211,7 +232,7 @@ tooltip {
 
 #custom-pacman2
 {
-    color: @green;
+    color: @pink;
 }
 
 #custom-notification
@@ -221,7 +242,7 @@ tooltip {
 
 #custom-lock
 {
-    color: @sapphire;
+    color: @yellow;
 }
 
 #group-motherboard,

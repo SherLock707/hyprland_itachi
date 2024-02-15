@@ -78,6 +78,31 @@
     },
   },
   
+  // BLANK Style
+  "hyprland/workspaces#blank": {
+    "active-only":false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "show-special": false,
+    "persistent-workspaces":{
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+    },
+    "format-icons": {
+      "active": "     ",
+      "default": " ",
+      "persistent":" ",
+      "empty":" ",
+      "special":" ",
+    },
+  },
+
   "hyprland/workspaces#kanji": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -413,7 +438,7 @@
     "format-critical": " {icon}{temperatureC}°C",
     "format": "{icon} {temperatureC}°C",
     "format-icons": ["󰈸"],
-    "on-click-right": "kitty --title nvtop sh -c 'nvtop'"
+    "on-click-right": "foot --title nvtop sh -c 'nvtop'"
   },
       
   "tray": {
@@ -687,12 +712,12 @@
     "format": "{player_icon} ",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
     "on-click-middle": "playerctl play-pause",
-      "on-click": "playerctl previous",
-      "on-click-right": "playerctl next",
-      "scroll-step": 5.0,
-      "on-scroll-up": "~/.config/hypr/scripts/Volume.sh --inc",
-      "on-scroll-down": "~/.config/hypr/scripts/Volume.sh --dec",
-      "smooth-scrolling-threshold": 1,
+    "on-click": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "scroll-step": 5.0,
+    "on-scroll-up": "~/.config/hypr/scripts/Volume.sh --inc",
+    "on-scroll-down": "~/.config/hypr/scripts/Volume.sh --dec",
+    "smooth-scrolling-threshold": 1,
     "player-icons": {
           "chromium": "",
           "brave": "",
@@ -716,6 +741,12 @@
   "custom/mviz": {
     "exec": "~/.config/hypr/scripts/waybar_cava.sh",
     "format": "{}",
+    "on-click-middle": "playerctl play-pause",
+    "on-click": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "scroll-step": 5.0,
+    "on-scroll-up": "~/.config/hypr/scripts/Volume.sh --inc",
+    "on-scroll-down": "~/.config/hypr/scripts/Volume.sh --dec",
   },
 
   }

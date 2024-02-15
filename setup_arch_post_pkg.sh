@@ -6,3 +6,4 @@ chsh -s /bin/fish
 
 # fftest /dev/input/event5
 
+#vs code : Color Highlight ,  

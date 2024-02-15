@@ -18,7 +18,8 @@ declare -A menu_options=(
 
 # Function for displaying notifications
 notification() {
-  dunstify -u normal -i "$iDIR/music.png" "Playing now: $@"
+  # dunstify -u normal -i "$iDIR/music.png" "Playing now: $@"
+  notify-send -u low -i "$iDIR/music.png" "Playing now: $@"
 }
 
 # Main function

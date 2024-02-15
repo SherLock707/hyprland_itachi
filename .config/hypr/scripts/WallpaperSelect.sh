@@ -78,6 +78,8 @@ SCRIPTSDIR="$HOME/.config/hypr/scripts"
 # WALLPAPERS PATH
 wallDIR="$HOME/Pictures/wallpapers"
 
+randWall="$HOME/.config/swaync/assets/random_wallpaper.png"
+
 # Transition config
 FPS=30
 TYPE="wipe"
@@ -93,10 +95,19 @@ fi
 # Retrieve image files
 PICS=($(ls "${wallDIR}" | grep -E ".jpg$|.jpeg$|.png$|.gif$"))
 RANDOM_PIC="${PICS[$((RANDOM % ${#PICS[@]}))]}"
-RANDOM_PIC_NAME="${#PICS[@]}. random"
+RANDOM_PIC_NAME="🎲 Random"
 
 # Rofi command
 rofi_command="rofi -show -dmenu -config ~/.config/rofi/config-wallpaper.rasi"
+
+
+get_random_emoji_list() {
+    emojis=("🚀" "🎉" "🍕" "🌺" "📚" "🎸" "🌟" "🚲" "🍦" "🎨" "🐾" "🍭" "🎈" "🌍"
+            "🌸" "🍀" "🎂" "🎁" "🎊" "🍔" "🌼" "📖" "🎹" "🌠" "🚗" "🍨" "🖌️" "🐶" "🍬"
+            "🍇" "🚁" "🎸" "🍟" "🌷" "📔" "🎷" "🚲" "🍨" "🎭" "🐱" "🍩" "🎀" "🌄"
+            "🌅" "🍓" "🎤" "🍻" "🌸" "🚢" "🏰" "🎡" "🎮" "🍂" "🚁" "🚤" "🚂")
+    shuf -e "${emojis[@]}" -n "1"
+}
 
 menu() {
   for i in "${!PICS[@]}"; do
@@ -108,7 +119,7 @@ menu() {
     fi
   done
 
-  printf "$RANDOM_PIC_NAME\n"
+  printf "$RANDOM_PIC_NAME\x00icon\x1f/${randWall}\n"
 }
 
 swww query || swww init

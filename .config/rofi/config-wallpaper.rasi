@@ -139,46 +139,55 @@ element {
 element normal.normal {
     background-color:       inherit;
     text-color:             @foreground;
+    border-color:           @foreground;
 }
 
 element normal.urgent {
     background-color:      inherit;
     text-color:            @foreground;
+    border-color:           @foreground;
 }
 
 element normal.active {
     background-color:      inherit;
     text-color:            @foreground;
+    border-color:           @foreground;
 }
 
 element selected.normal {
     background-color:      @selected-normal-background;
     text-color:            @foreground;
+    border-color:           @foreground;
 }
 
 element selected.urgent {
     background-color:      inherit;
     text-color:            @foreground;
+    border-color:           @foreground;
 }
 
 element selected.active {
     background-color:      inherit;
     text-color:            @foreground;
+    border-color:           @foreground;
 }
 
 element alternate.normal {
     background-color:      inherit;
     text-color:            @foreground;
+    border-color:           @foreground;
 }
 
 element alternate.urgent {
     background-color:      inherit;
     text-color:            @foreground;
+    border-color:           @foreground;
 }
 
 element alternate.active {
     background-color:      inherit;
     text-color:            @foreground;
+    border-color:           @foreground;
 }
 
 element-icon {
@@ -195,7 +204,7 @@ element-text {
     background-color:      transparent;
     text-color:            inherit;
     cursor:                inherit;
-    padding:               0px 0px 0px 50px;
+    padding:               0px 0px 0px 40px;
 }
 
 /*****----- Message -----*****/

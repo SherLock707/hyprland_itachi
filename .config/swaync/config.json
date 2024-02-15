@@ -36,9 +36,9 @@
     }
   },
   "widgets": [
-    "dnd",
     "buttons-grid",
     "mpris",
+    "dnd",
     "volume", 
    "backlight",
    "title",

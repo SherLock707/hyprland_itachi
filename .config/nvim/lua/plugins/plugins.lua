@@ -6,12 +6,12 @@ return {
     priority = 1000,
     config = function()
       require("catppuccin").setup({
-        flavour = "macchiato", -- latte, frappe, macchiato, mocha
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
         background = { -- :h background
           light = "latte",
           dark = "mocha",
         },
-        transparent_background = true, -- disables setting the background color.
+        transparent_background = false, -- disables setting the background color.
         show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
         term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
         dim_inactive = {
@@ -110,52 +110,28 @@ return {
     },
   },
 
-  -- LSP CONFIG
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      "jose-elias-alvarez/typescript.nvim",
-      init = function()
-        require("lazyvim.util").lsp.on_attach(function(_, buffer)
-          -- stylua: ignore
-          vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
-          vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
-        end)
-      end,
-    },
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- tsserver will be automatically installed with mason and loaded with lspconfig
-        html = {},
-        astro = {},
-        svelte = {},
-        tsserver = {},
-        cssls = {},
-        pyright = {},
-        rust_analyzer = {},
-      },
-      -- you can do any additional lsp server setup here
-      -- return true if you don't want this server to be setup with lspconfig
-      ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-      setup = {
-        -- example to setup with typescript.nvim
-        tsserver = function(_, opts)
-          require("typescript").setup({ server = opts })
-          return true
-        end,
-        wgsl = function(_, opts)
-          local lspconfig = require("lspconfig")
-          lspconfig.wgsl_analyzer.setup()
-          return true
-        end,
+-- LSP CONFIG
+{
+  "neovim/nvim-lspconfig",
+  init = function()
+    require("lazyvim.util").lsp.on_attach(function(_, bufnr)
+      -- Your custom LSP setup here
+      -- Example:
+      local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+      local opts = { noremap=true, silent=true }
 
-        -- Specify * to use this function as a fallback for any server
-        -- ["*"] = function(server, opts) end,
-      },
+      -- Example key mappings
+      buf_set_keymap('n', '<leader>co', '<Cmd>lua vim.lsp.buf.organize_imports()<CR>', opts)
+      buf_set_keymap('n', '<leader>cR', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    end)
+  end,
+  opts = {
+    servers = {
+      -- No language servers specified
     },
   },
+},
+
 
   -- TREESITTER
 
@@ -164,72 +140,64 @@ return {
     opts = {
       ensure_installed = {
         "bash",
-        "html",
-        "javascript",
-        "svelte",
         "json",
         "lua",
-        "markdown",
-        "markdown_inline",
         "python",
         "query",
         "regex",
-        "tsx",
-        "typescript",
         "vim",
         "yaml",
-        "rust",
-        "wgsl",
+        "rust"
       },
     },
   },
 
   -- DISCORD PRESENCE
-  {
-    "SIGMazer/presence.nvim",
-    config = function()
-      require("presence").setup({
-        -- General options
-        auto_update = true, -- Update activity based on autocmd events (if `false`, map or manually execute `:lua package.loaded.presence:update()`)
-        neovim_image_text = "League of Legends", -- Text displayed when hovered over the Neovim image
-        main_image = "https://raw.githubusercontent.com/github/explore/b088bf18ff2af3f2216294ffb10f5a07eb55aa31/topics/league-of-legends/league-of-legends.png", -- Main image display (either "neovim" or "file")
-        --client_id = "793271441293967371", -- Use your own Discord application client id (not recommended)
-        log_level = nil, -- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
-        debounce_timeout = 10, -- Number of seconds to debounce events (or calls to `:lua package.loaded.presence:update(<filename>, true)`)
-        enable_line_number = false, -- Displays the current line number instead of the current project
-        blacklist = {}, -- A list of strings or Lua patterns that disable Rich Presence if the current file name, path, or workspace matches
-        buttons = false, -- Configure Rich Presence button(s), either a boolean to enable/disable, a static table (`{{ label = "<label>", url = "<url>" }, ...}`, or a function(buffer: string, repo_url: string|nil): table)
-        file_assets = {}, -- Custom file asset definitions keyed by file names and extensions (see default config at `lua/presence/file_assets.lua` for reference)
-        show_time = true, -- Show the timer
+  -- {
+  --   "SIGMazer/presence.nvim",
+  --   config = function()
+  --     require("presence").setup({
+  --       -- General options
+  --       auto_update = true, -- Update activity based on autocmd events (if `false`, map or manually execute `:lua package.loaded.presence:update()`)
+  --       neovim_image_text = "League of Legends", -- Text displayed when hovered over the Neovim image
+  --       main_image = "https://raw.githubusercontent.com/github/explore/b088bf18ff2af3f2216294ffb10f5a07eb55aa31/topics/league-of-legends/league-of-legends.png", -- Main image display (either "neovim" or "file")
+  --       --client_id = "793271441293967371", -- Use your own Discord application client id (not recommended)
+  --       log_level = nil, -- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
+  --       debounce_timeout = 10, -- Number of seconds to debounce events (or calls to `:lua package.loaded.presence:update(<filename>, true)`)
+  --       enable_line_number = false, -- Displays the current line number instead of the current project
+  --       blacklist = {}, -- A list of strings or Lua patterns that disable Rich Presence if the current file name, path, or workspace matches
+  --       buttons = false, -- Configure Rich Presence button(s), either a boolean to enable/disable, a static table (`{{ label = "<label>", url = "<url>" }, ...}`, or a function(buffer: string, repo_url: string|nil): table)
+  --       file_assets = {}, -- Custom file asset definitions keyed by file names and extensions (see default config at `lua/presence/file_assets.lua` for reference)
+  --       show_time = true, -- Show the timer
 
-        -- Rich Presence text options
-        editing_text = "In Queue", -- Format string rendered when an editable file is loaded in the buffer (either string or function(filename: string): string)
-        file_explorer_text = "In Queue", -- Format string rendered when browsing a file explorer (either string or function(file_explorer_name: string): string)
-        git_commit_text = "In Queue", -- Format string rendered when committing changes in git (either string or function(filename: string): string)
-        plugin_manager_text = "In Queue", -- Format string rendered when managing plugins (either string or function(plugin_manager_name: string): string)
-        reading_text = "In Queue", -- Format string rendered when a read-only or unmodifiable file is loaded in the buffer (either string or function(filename: string): string)
-        workspace_text = "", -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
-        line_number_text = "",
-      })
-    end,
-  },
+  --       -- Rich Presence text options
+  --       editing_text = "In Queue", -- Format string rendered when an editable file is loaded in the buffer (either string or function(filename: string): string)
+  --       file_explorer_text = "In Queue", -- Format string rendered when browsing a file explorer (either string or function(file_explorer_name: string): string)
+  --       git_commit_text = "In Queue", -- Format string rendered when committing changes in git (either string or function(filename: string): string)
+  --       plugin_manager_text = "In Queue", -- Format string rendered when managing plugins (either string or function(plugin_manager_name: string): string)
+  --       reading_text = "In Queue", -- Format string rendered when a read-only or unmodifiable file is loaded in the buffer (either string or function(filename: string): string)
+  --       workspace_text = "", -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
+  --       line_number_text = "",
+  --     })
+  --   end,
+  -- },
 
   -- GITHUB COPILOT
-  {
-    "github/copilot.vim",
-    init = function()
-      vim.g.copilot_no_tab_map = true
-      vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-    end,
-    config = function()
-      vim.keymap.set("i", "<C-e>", [[copilot#Accept("\<CR>")]], {
-        silent = true,
-        expr = true,
-        script = true,
-        replace_keycodes = false,
-      })
-    end,
-  },
+  -- {
+  --   "github/copilot.vim",
+  --   init = function()
+  --     vim.g.copilot_no_tab_map = true
+  --     vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+  --   end,
+  --   config = function()
+  --     vim.keymap.set("i", "<C-e>", [[copilot#Accept("\<CR>")]], {
+  --       silent = true,
+  --       expr = true,
+  --       script = true,
+  --       replace_keycodes = false,
+  --     })
+  --   end,
+  -- },
 
   -- COMMENTS
   {

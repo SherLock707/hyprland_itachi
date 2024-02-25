@@ -14,17 +14,7 @@ local languages = {
 --          If subtitles are found for the first language,
 --          other languages will NOT be downloaded,
 --          so put your preferred language first:
-            { 'English', 'en', 'eng' },
-            { 'Dutch', 'nl', 'dut' },
---          { 'Spanish', 'es', 'spa' },
---          { 'French', 'fr', 'fre' },
---          { 'German', 'de', 'ger' },
---          { 'Italian', 'it', 'ita' },
---          { 'Portuguese', 'pt', 'por' },
---          { 'Polish', 'pl', 'pol' },
---          { 'Russian', 'ru', 'rus' },
---          { 'Chinese', 'zh', 'chi' },
---          { 'Arabic', 'ar', 'ara' },
+            { 'English', 'en', 'eng' }
 }
 --=============================================================================
 -->>    PROVIDER LOGINS:

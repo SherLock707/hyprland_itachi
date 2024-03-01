@@ -3,7 +3,7 @@
 
 /* ---- Configuration ---- */
 configuration {
-    modi:                  "drun,run,filebrowser";
+    modi:                  "drun";
     font:                  "Fira Code SemiBold 12";
     show-icons:            true;
     display-drun:          "";
@@ -24,8 +24,10 @@ configuration {
 
 /* ---- Window ---- */
 window {
-    width:				    1500px;
+    /*width:				    1500px; */
 	/*height:				450px;*/
+    width:                  50%;
+    height:                 50%;
     x-offset:               0px;
     y-offset:               0px;
     spacing:                0px;
@@ -40,7 +42,10 @@ window {
     enabled:                true;
     border-radius:          12px;
     border-radius:          12px;
+    transparency:           "real";
 	background-image:   	url("~/.config/rofi/.current_wallpaper", height);
+    
+    /*background-color:            #00000088; */
 }
 
 /* ---- Mainbox ---- */

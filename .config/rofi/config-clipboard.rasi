@@ -24,8 +24,10 @@ configuration {
 
 /* ---- Window ---- */
 window {
-    width:						700px;
+    /* width:						700px; */
 	/*height:						500px;*/
+    width:                      35%;
+    height:						50%;
     x-offset:                   0px;
     y-offset:                   0px;
     spacing:                    0px;
@@ -40,7 +42,6 @@ window {
     enabled:                    true;
     border-radius:              12px;
     background-image:    		url("~/.config/rofi/.current_wallpaper", height);
- 	
 }
 
 /* ---- Mainbox ---- */
